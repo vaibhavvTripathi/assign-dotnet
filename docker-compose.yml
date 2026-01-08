@@ -1,0 +1,32 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myapi
+    ports:
+      - "5050:8080"  # HTTP
+      - "5051:8081"  # HTTPS (if configured)
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      # SQLite connection string - database will be stored in the volume
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/taskmanagement.db
+      - ApiKey=docker-api-key-secure-12345
+    volumes:
+      # Persist SQLite database
+      - sqlite-data:/app/data
+      # Optional: Mount appsettings for easy configuration changes
+      - ./appsettings.json:/app/appsettings.json:ro
+      - ./appsettings.Development.json:/app/appsettings.Development.json:ro
+    restart: unless-stopped
+    networks:
+      - myapi-network
+
+volumes:
+  sqlite-data:
+    driver: local
+
+networks:
+  myapi-network:
+    driver: bridge
