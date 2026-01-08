@@ -11,7 +11,6 @@ dotnet restore
 
 ### 2. Run the Application
 
-#### Option B: Using Docker
 ```bash
 docker-compose up -d --build
 ```
