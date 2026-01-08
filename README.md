@@ -18,23 +18,23 @@ API documentation available at: `http://localhost:5050/swagger/index.html`
 
 ## 📋 API Endpoints
 
-### Authentication (`/api/auth`)
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login user
+### Authentication (`http://localhost:5050/api/auth`)
+- `POST http://localhost:5050/api/auth/register` - Register a new user
+- `POST http://localhost:5050/api/auth/login` - Login user
 
-### Tasks (`/api/tasks`) - *Requires Authentication*
-- `GET /api/tasks` - Get all tasks (optional query params: `status`, `priority`, `assignedToId`)
-- `GET /api/tasks/{id}` - Get task by ID
-- `POST /api/tasks` - Create new task
-- `PUT /api/tasks/{id}` - Update task
-- `PATCH /api/tasks/{id}/status` - Update task status
-- `DELETE /api/tasks/{id}` - Delete task
+### Tasks (`http://localhost:5050/api/tasks`) - *Requires Authentication*
+- `GET http://localhost:5050/api/tasks` - Get all tasks (optional query params: `status`, `priority`, `assignedToId`)
+- `GET http://localhost:5050/api/tasks/{id}` - Get task by ID
+- `POST http://localhost:5050/api/tasks` - Create new task
+- `PUT http://localhost:5050/api/tasks/{id}` - Update task
+- `PATCH http://localhost:5050/api/tasks/{id}/status` - Update task status
+- `DELETE http://localhost:5050/api/tasks/{id}` - Delete task
 
 ### Users (`/api/users`) - *Requires Authentication*
-- `GET /api/users` - Get all users (optional query params: `page`, `pageSize`)
-- `GET /api/users/{id}` - Get user by ID
-- `POST /api/users` - Create new user
-- `DELETE /api/users/{id}` - Delete user
+- `GET http://localhost:5050/api/users` - Get all users (optional query params: `page`, `pageSize`)
+- `GET http://localhost:5050/api/users/{id}` - Get user by ID
+- `POST http://localhost:5050/api/users` - Create new user
+- `DELETE http://localhost:5050/api/users/{id}` - Delete user
 
 ## 📮 Postman Collection
 
